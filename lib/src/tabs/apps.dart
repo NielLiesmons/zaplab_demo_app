@@ -39,13 +39,18 @@ class AppsTab extends StatelessWidget {
                           publisherName: 'Zaplab',
                           publisherPicUrl:
                               'https://cdn.satellite.earth/da67840aae6720f5e5fb9e4c8ce25a85f6d8cbf22f4a04fd44babd58a9badfc6.png',
+                          source: 'Repo',
+                          size: '32 MB',
+                          date: '21/04/25',
+                          license: 'Unlicense',
                           onInstall: () {},
                           onViewMore: () {},
                         ),
                         AppInteractionBar(
-                          eventId: '1',
+                          nevent: '1',
                           zaps: [
                             Zap(
+                              nevent: '1',
                               amount: 10000,
                               profileName: 'elsat',
                               profilePicUrl:
@@ -53,6 +58,7 @@ class AppsTab extends StatelessWidget {
                               timestamp: DateTime.now(),
                             ),
                             Zap(
+                              nevent: '1',
                               amount: 560,
                               profileName: 'franzap',
                               profilePicUrl:
@@ -60,6 +66,7 @@ class AppsTab extends StatelessWidget {
                               timestamp: DateTime.now(),
                             ),
                             Zap(
+                              nevent: '1',
                               amount: 123,
                               profileName: 'Niel Liesmons',
                               profilePicUrl:
@@ -67,6 +74,7 @@ class AppsTab extends StatelessWidget {
                               timestamp: DateTime.now(),
                             ),
                             Zap(
+                              nevent: '1',
                               amount: 66,
                               profileName: 'calle',
                               profilePicUrl:
@@ -74,6 +82,7 @@ class AppsTab extends StatelessWidget {
                               timestamp: DateTime.now(),
                             ),
                             Zap(
+                              nevent: '1',
                               amount: 50,
                               profileName: 'Pip',
                               profilePicUrl:
@@ -83,6 +92,7 @@ class AppsTab extends StatelessWidget {
                           ],
                           reactions: [
                             Reaction(
+                              emojiName: 'todo',
                               emojiUrl:
                                   'https://cdn.betterttv.net/emote/55b6f480e66682f576dd94f5/3x.webp',
                               profilePicUrl:
@@ -91,6 +101,7 @@ class AppsTab extends StatelessWidget {
                               timestamp: DateTime.now(),
                             ),
                             Reaction(
+                              emojiName: 'todo',
                               emojiUrl:
                                   'https://cdn.satellite.earth/60a5e73bfa6dfd35bd0b144f38f6ed2aaab0606b2bd68b623f419ae0709fa10a.png',
                               profilePicUrl:
@@ -115,20 +126,64 @@ class AppsTab extends StatelessWidget {
                                 children: [
                                   AppFeedPost(
                                     content:
-                                        'Posts or replies like this with nostr:event1blablabla and nostr:nprofile1234567890 are going to have to be rendered as quoted publications and @profileName',
+                                        'Yeah, this is why I\'m not using Nostr so much on mobile. The browser experience is king, for now.',
                                     profileName: 'James Lewis',
                                     profilePicUrl:
                                         'https://i.nostr.build/zdMAY.jpg',
                                     timestamp: DateTime.now(),
+                                    onResolveEvent: (identifier) async {
+                                      // Simulate network delay
+                                      await Future.delayed(
+                                          const Duration(seconds: 1));
+                                      return NostrEvent(
+                                        nevent: '1',
+                                        contentType: 'article',
+                                        title: 'Simple Questions',
+                                        imageUrl:
+                                            'https://cdn.satellite.earth/64b885412eb944828d964c21242f0c7415b1afbf4554eca08f9dd1afba0c7584.png',
+                                        profileName: 'Niel Liesmons',
+                                        profilePicUrl:
+                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                        timestamp: DateTime.now(),
+                                        onTap: () {
+                                          print('tapped');
+                                        },
+                                      );
+                                    },
+                                    onResolveProfile: (identifier) async {
+                                      await Future.delayed(
+                                          const Duration(seconds: 1));
+                                      return Profile(
+                                        npub: 'npub1337',
+                                        profileName: 'Pip',
+                                        profilePicUrl:
+                                            'https://m.primal.net/IfSZ.jpg',
+                                      );
+                                    },
+                                    onResolveEmoji: (identifier) async {
+                                      await Future.delayed(
+                                          const Duration(seconds: 1));
+                                      return 'https://cdn.satellite.earth/eb0122af34cf27ba7c8248d72294c32a956209f157aa9d697c7cdd6b054f9ea9.png';
+                                    },
+                                    onResolveHashtag: (identifier) async {
+                                      await Future.delayed(
+                                          const Duration(seconds: 1));
+                                      return () {};
+                                    },
+                                    onLinkTap: (url) {
+                                      print(url);
+                                    },
                                     zaps: [
                                       Zap(
-                                        amount: 2,
-                                        profileName: 'Gzuuus',
+                                        nevent: '1',
+                                        amount: 100,
+                                        profileName: 'ثعبان',
                                         profilePicUrl:
-                                            'https://pfp.nostr.build/3e72dab77cfcb2339a30a832c891064e38d70ad652cb58306516e34e78e84325.png',
+                                            'https://nostr.download/1aba957814cac9c324c54d94e0ba6606dc50af17f7c08654e9b9f139a9720d6d.jpeg',
                                         timestamp: DateTime.now(),
                                       ),
                                       Zap(
+                                        nevent: '1',
                                         amount: 56,
                                         profileName: 'Pip',
                                         profilePicUrl:
@@ -138,40 +193,18 @@ class AppsTab extends StatelessWidget {
                                     ],
                                     reactions: [
                                       Reaction(
+                                        emojiName: 'todo',
                                         emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
+                                            'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femojiguide.org%2Fimages%2Femoji%2Fc%2F1e2fb481tsfvyc.png&f=1&nofb=1&ipt=73d8789f7a055e207ff06bd2278184a2ab6108a8c019f59d0526d05f91d925e7&ipo=images',
                                         profilePicUrl:
-                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                        profileName: "Niel Liesmons",
+                                            'https://nostr.download/1aba957814cac9c324c54d94e0ba6606dc50af17f7c08654e9b9f139a9720d6d.jpeg',
+                                        profileName: "ثعبان",
                                         timestamp: DateTime.now(),
                                       ),
                                       Reaction(
+                                        emojiName: 'todo',
                                         emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
-                                        profilePicUrl:
-                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                        profileName: "Niel Liesmons",
-                                        timestamp: DateTime.now(),
-                                      ),
-                                      Reaction(
-                                        emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
-                                        profilePicUrl:
-                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                        profileName: "Niel Liesmons",
-                                        timestamp: DateTime.now(),
-                                      ),
-                                      Reaction(
-                                        emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
-                                        profilePicUrl:
-                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                        profileName: "Niel Liesmons",
-                                        timestamp: DateTime.now(),
-                                      ),
-                                      Reaction(
-                                        emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
+                                            'https://cdn.satellite.earth/60a5e73bfa6dfd35bd0b144f38f6ed2aaab0606b2bd68b623f419ae0709fa10a.png',
                                         profilePicUrl:
                                             'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
                                         profileName: "Niel Liesmons",
@@ -196,98 +229,6 @@ class AppsTab extends StatelessWidget {
                                       ),
                                     ],
                                     totalReplies: 10,
-                                  ),
-                                  AppFeedPost(
-                                    content:
-                                        'The way the reactions and zaps are scrolled into transparency here 🤌',
-                                    profileName:
-                                        'Niel Liesmons Niel Liesmons Niel ',
-                                    profilePicUrl:
-                                        'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                    timestamp: DateTime.now(),
-                                    zaps: [
-                                      Zap(
-                                        amount: 2,
-                                        profileName: 'Gzuuus',
-                                        profilePicUrl:
-                                            'https://pfp.nostr.build/3e72dab77cfcb2339a30a832c891064e38d70ad652cb58306516e34e78e84325.png',
-                                        timestamp: DateTime.now(),
-                                      ),
-                                      Zap(
-                                        amount: 56,
-                                        profileName: 'Pip',
-                                        profilePicUrl:
-                                            'https://m.primal.net/IfSZ.jpg',
-                                        timestamp: DateTime.now(),
-                                      ),
-                                    ],
-                                    reactions: [
-                                      Reaction(
-                                        emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
-                                        profilePicUrl:
-                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                        profileName: "Niel Liesmons",
-                                        timestamp: DateTime.now(),
-                                      ),
-                                      Reaction(
-                                        emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
-                                        profilePicUrl:
-                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                        profileName: "Niel Liesmons",
-                                        timestamp: DateTime.now(),
-                                      ),
-                                      Reaction(
-                                        emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
-                                        profilePicUrl:
-                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                        profileName: "Niel Liesmons",
-                                        timestamp: DateTime.now(),
-                                      ),
-                                      Reaction(
-                                        emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
-                                        profilePicUrl:
-                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                        profileName: "Niel Liesmons",
-                                        timestamp: DateTime.now(),
-                                      ),
-                                      Reaction(
-                                        emojiUrl:
-                                            'https://cdn.satellite.earth/3e385cea12375df0dec2119bdd7dded32b1c794392782d58e6d77276ec9382ca.png',
-                                        profilePicUrl:
-                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
-                                        profileName: "Niel Liesmons",
-                                        timestamp: DateTime.now(),
-                                      ),
-                                    ],
-                                    topReplies: [
-                                      ReplyUserData(
-                                        profileName: 'Vinney',
-                                        profilePicUrl:
-                                            'https://m.primal.net/HdAt.jpg',
-                                      ),
-                                      ReplyUserData(
-                                        profileName: 'jrm',
-                                        profilePicUrl:
-                                            'https://pfp.nostr.build/e9e7963637e04d90ad2c33f21c6f112a188c5b001dd697e108991261487aa258.jpg',
-                                      ),
-                                      ReplyUserData(
-                                        profileName: 'elsat',
-                                        profilePicUrl:
-                                            'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
-                                      ),
-                                    ],
-                                    totalReplies: 10,
-                                  ),
-                                  AppFeedPost(
-                                    content: 'test test',
-                                    profileName: 'elsat',
-                                    profilePicUrl:
-                                        'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
-                                    timestamp: DateTime.now(),
                                   ),
                                 ],
                               ),

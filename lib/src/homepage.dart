@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                     tabs: [
                       const BaseTab().tabData(context),
                       const AppsTab().tabData(context),
-                      ChatTab.tabData(context),
+                      const ChatTab().tabData(context),
                       const ButtonsTab().tabData(context),
                       const LoadersTab().tabData(context),
                       const ProfilePicsTab().tabData(context),

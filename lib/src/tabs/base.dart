@@ -332,11 +332,53 @@ class BaseTab extends StatelessWidget {
                                         'I don\'t want to have to tap Back twelve times just to go back home 🏠. \n\nThat type of Big Tech UX is why hardly anyone ever wanders beyond like two clicks of tHe FeEd.',
                                     communities: [
                                       Community(
-                                        name: 'Nips Out',
+                                        communityName: 'Nips Out',
+                                        ncommunity: 'ncommunity1blablabla',
                                         profilePicUrl:
                                             'https://cdn.satellite.earth/1895487e0fcd0db92babfa58501fd7cd319620c818e01d7bb941c4d465e4d685.png',
                                       ),
                                     ],
+                                    onResolveEvent: (identifier) async {
+                                      // Simulate network delay
+                                      await Future.delayed(
+                                          const Duration(seconds: 1));
+                                      return NostrEvent(
+                                        nevent: '1',
+                                        contentType: 'article',
+                                        title: 'Simple Questions',
+                                        imageUrl:
+                                            'https://cdn.satellite.earth/64b885412eb944828d964c21242f0c7415b1afbf4554eca08f9dd1afba0c7584.png',
+                                        profileName: 'Niel Liesmons',
+                                        profilePicUrl:
+                                            'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                        timestamp: DateTime.now(),
+                                        onTap: () {
+                                          print('tapped');
+                                        },
+                                      );
+                                    },
+                                    onResolveProfile: (identifier) async {
+                                      await Future.delayed(
+                                          const Duration(seconds: 1));
+                                      return Profile(
+                                          npub: 'npub',
+                                          profileName: 'Pip',
+                                          profilePicUrl:
+                                              'https://m.primal.net/IfSZ.jpg');
+                                    },
+                                    onResolveEmoji: (identifier) async {
+                                      await Future.delayed(
+                                          const Duration(seconds: 1));
+                                      return 'https://cdn.satellite.earth/eb0122af34cf27ba7c8248d72294c32a956209f157aa9d697c7cdd6b054f9ea9.png';
+                                    },
+                                    onResolveHashtag: (identifier) async {
+                                      await Future.delayed(
+                                          const Duration(seconds: 1));
+                                      return () {};
+                                    },
+                                    onLinkTap: (url) {
+                                      print(url);
+                                    },
                                   ),
                                   AppTabView(
                                     tabs: [
@@ -358,8 +400,54 @@ class BaseTab extends StatelessWidget {
                                               profilePicUrl:
                                                   'https://i.nostr.build/zdMAY.jpg',
                                               timestamp: DateTime.now(),
+                                              onResolveEvent:
+                                                  (identifier) async {
+                                                // Simulate network delay
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return NostrEvent(
+                                                  nevent: '1',
+                                                  contentType: 'article',
+                                                  title: 'Simple Questions',
+                                                  imageUrl:
+                                                      'https://cdn.satellite.earth/64b885412eb944828d964c21242f0c7415b1afbf4554eca08f9dd1afba0c7584.png',
+                                                  profileName: 'Niel Liesmons',
+                                                  profilePicUrl:
+                                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                                  timestamp: DateTime.now(),
+                                                  onTap: () {
+                                                    print('tapped');
+                                                  },
+                                                );
+                                              },
+                                              onResolveProfile:
+                                                  (identifier) async {
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return Profile(
+                                                    npub: 'npub',
+                                                    profileName: 'Pip',
+                                                    profilePicUrl:
+                                                        'https://m.primal.net/IfSZ.jpg');
+                                              },
+                                              onResolveEmoji:
+                                                  (identifier) async {
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return 'https://cdn.satellite.earth/eb0122af34cf27ba7c8248d72294c32a956209f157aa9d697c7cdd6b054f9ea9.png';
+                                              },
+                                              onResolveHashtag:
+                                                  (identifier) async {
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return () {};
+                                              },
+                                              onLinkTap: (url) {
+                                                print(url);
+                                              },
                                               zaps: [
                                                 Zap(
+                                                  nevent: '1',
                                                   amount: 100,
                                                   profileName: 'ثعبان',
                                                   profilePicUrl:
@@ -367,6 +455,7 @@ class BaseTab extends StatelessWidget {
                                                   timestamp: DateTime.now(),
                                                 ),
                                                 Zap(
+                                                  nevent: '1',
                                                   amount: 56,
                                                   profileName: 'Pip',
                                                   profilePicUrl:
@@ -376,6 +465,7 @@ class BaseTab extends StatelessWidget {
                                               ],
                                               reactions: [
                                                 Reaction(
+                                                  emojiName: 'todo',
                                                   emojiUrl:
                                                       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femojiguide.org%2Fimages%2Femoji%2Fc%2F1e2fb481tsfvyc.png&f=1&nofb=1&ipt=73d8789f7a055e207ff06bd2278184a2ab6108a8c019f59d0526d05f91d925e7&ipo=images',
                                                   profilePicUrl:
@@ -384,6 +474,7 @@ class BaseTab extends StatelessWidget {
                                                   timestamp: DateTime.now(),
                                                 ),
                                                 Reaction(
+                                                  emojiName: 'todo',
                                                   emojiUrl:
                                                       'https://cdn.satellite.earth/60a5e73bfa6dfd35bd0b144f38f6ed2aaab0606b2bd68b623f419ae0709fa10a.png',
                                                   profilePicUrl:
@@ -413,21 +504,100 @@ class BaseTab extends StatelessWidget {
                                             ),
                                             AppFeedPost(
                                               content:
-                                                  'You might want to look into the AppScreen widget we have in the Zaplab Design package. It gives access to history links and home when the user swipes down on a screen.',
-                                              profileName: 'Niel Liesmons',
+                                                  'Yeah, this is why I\'m not using Nostr so much on mobile. The browser experience is king, for now.',
+                                              profileName: 'James Lewis',
                                               profilePicUrl:
-                                                  'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                                  'https://i.nostr.build/zdMAY.jpg',
                                               timestamp: DateTime.now(),
+                                              onResolveEvent:
+                                                  (identifier) async {
+                                                // Simulate network delay
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return NostrEvent(
+                                                  nevent: '1',
+                                                  contentType: 'article',
+                                                  title: 'Simple Questions',
+                                                  imageUrl:
+                                                      'https://cdn.satellite.earth/64b885412eb944828d964c21242f0c7415b1afbf4554eca08f9dd1afba0c7584.png',
+                                                  profileName: 'Niel Liesmons',
+                                                  profilePicUrl:
+                                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                                  timestamp: DateTime.now(),
+                                                  onTap: () {
+                                                    print('tapped');
+                                                  },
+                                                );
+                                              },
+                                              onResolveProfile:
+                                                  (identifier) async {
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return Profile(
+                                                    npub: 'npub',
+                                                    profileName: 'Pip',
+                                                    profilePicUrl:
+                                                        'https://m.primal.net/IfSZ.jpg');
+                                              },
+                                              onResolveEmoji:
+                                                  (identifier) async {
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return 'https://cdn.satellite.earth/eb0122af34cf27ba7c8248d72294c32a956209f157aa9d697c7cdd6b054f9ea9.png';
+                                              },
+                                              onResolveHashtag:
+                                                  (identifier) async {
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return () {};
+                                              },
+                                              onLinkTap: (url) {
+                                                print(url);
+                                              },
                                               zaps: [
                                                 Zap(
-                                                  amount: 2100,
-                                                  profileName: 'Gzuuus',
+                                                  nevent: '1',
+                                                  amount: 100,
+                                                  profileName: 'ثعبان',
                                                   profilePicUrl:
-                                                      'https://pfp.nostr.build/3e72dab77cfcb2339a30a832c891064e38d70ad652cb58306516e34e78e84325.png',
+                                                      'https://nostr.download/1aba957814cac9c324c54d94e0ba6606dc50af17f7c08654e9b9f139a9720d6d.jpeg',
+                                                  timestamp: DateTime.now(),
+                                                ),
+                                                Zap(
+                                                  nevent: '1',
+                                                  amount: 56,
+                                                  profileName: 'Pip',
+                                                  profilePicUrl:
+                                                      'https://m.primal.net/IfSZ.jpg',
+                                                  timestamp: DateTime.now(),
+                                                ),
+                                              ],
+                                              reactions: [
+                                                Reaction(
+                                                  emojiName: 'todo',
+                                                  emojiUrl:
+                                                      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femojiguide.org%2Fimages%2Femoji%2Fc%2F1e2fb481tsfvyc.png&f=1&nofb=1&ipt=73d8789f7a055e207ff06bd2278184a2ab6108a8c019f59d0526d05f91d925e7&ipo=images',
+                                                  profilePicUrl:
+                                                      'https://nostr.download/1aba957814cac9c324c54d94e0ba6606dc50af17f7c08654e9b9f139a9720d6d.jpeg',
+                                                  profileName: "ثعبان",
+                                                  timestamp: DateTime.now(),
+                                                ),
+                                                Reaction(
+                                                  emojiName: 'todo',
+                                                  emojiUrl:
+                                                      'https://cdn.satellite.earth/60a5e73bfa6dfd35bd0b144f38f6ed2aaab0606b2bd68b623f419ae0709fa10a.png',
+                                                  profilePicUrl:
+                                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                                  profileName: "Niel Liesmons",
                                                   timestamp: DateTime.now(),
                                                 ),
                                               ],
                                               topReplies: [
+                                                ReplyUserData(
+                                                  profileName: 'Vinney',
+                                                  profilePicUrl:
+                                                      'https://m.primal.net/HdAt.jpg',
+                                                ),
                                                 ReplyUserData(
                                                   profileName: 'jrm',
                                                   profilePicUrl:
@@ -438,56 +608,117 @@ class BaseTab extends StatelessWidget {
                                                   profilePicUrl:
                                                       'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
                                                 ),
-                                                ReplyUserData(
-                                                  profileName: 'Pip',
-                                                  profilePicUrl:
-                                                      'https://m.primal.net/IfSZ.jpg',
-                                                ),
                                               ],
-                                              totalReplies: 6,
-                                            ),
-                                            AppFeedPost(
-                                              content: 'I feel you bro.',
-                                              profileName: 'elsat',
-                                              profilePicUrl:
-                                                  'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
-                                              timestamp: DateTime.now(),
+                                              totalReplies: 10,
                                             ),
                                             AppFeedPost(
                                               content:
-                                                  'True story, I rarely dive deep on mobile with the apps we have now.',
-                                              profileName: 'Pip',
+                                                  'Yeah, this is why I\'m not using Nostr so much on mobile. The browser experience is king, for now.',
+                                              profileName: 'James Lewis',
                                               profilePicUrl:
-                                                  'https://m.primal.net/IfSZ.jpg',
+                                                  'https://i.nostr.build/zdMAY.jpg',
                                               timestamp: DateTime.now(),
-                                            ),
-                                            AppFeedPost(
-                                              content: 'test test',
-                                              profileName: 'elsat',
-                                              profilePicUrl:
-                                                  'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
-                                              timestamp: DateTime.now(),
-                                            ),
-                                            AppFeedPost(
-                                              content: 'test test',
-                                              profileName: 'elsat',
-                                              profilePicUrl:
-                                                  'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
-                                              timestamp: DateTime.now(),
-                                            ),
-                                            AppFeedPost(
-                                              content: 'test test',
-                                              profileName: 'elsat',
-                                              profilePicUrl:
-                                                  'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
-                                              timestamp: DateTime.now(),
-                                            ),
-                                            AppFeedPost(
-                                              content: 'test test',
-                                              profileName: 'elsat',
-                                              profilePicUrl:
-                                                  'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
-                                              timestamp: DateTime.now(),
+                                              onResolveEvent:
+                                                  (identifier) async {
+                                                // Simulate network delay
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return NostrEvent(
+                                                  nevent: '1',
+                                                  contentType: 'article',
+                                                  title: 'Simple Questions',
+                                                  imageUrl:
+                                                      'https://cdn.satellite.earth/64b885412eb944828d964c21242f0c7415b1afbf4554eca08f9dd1afba0c7584.png',
+                                                  profileName: 'Niel Liesmons',
+                                                  profilePicUrl:
+                                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                                  timestamp: DateTime.now(),
+                                                  onTap: () {
+                                                    print('tapped');
+                                                  },
+                                                );
+                                              },
+                                              onResolveProfile:
+                                                  (identifier) async {
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return Profile(
+                                                    npub: 'npub1337',
+                                                    profileName: 'Pip',
+                                                    profilePicUrl:
+                                                        'https://m.primal.net/IfSZ.jpg');
+                                              },
+                                              onResolveEmoji:
+                                                  (identifier) async {
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return 'https://cdn.satellite.earth/eb0122af34cf27ba7c8248d72294c32a956209f157aa9d697c7cdd6b054f9ea9.png';
+                                              },
+                                              onResolveHashtag:
+                                                  (identifier) async {
+                                                await Future.delayed(
+                                                    const Duration(seconds: 1));
+                                                return () {};
+                                              },
+                                              onLinkTap: (url) {
+                                                print(url);
+                                              },
+                                              zaps: [
+                                                Zap(
+                                                  nevent: '1',
+                                                  amount: 100,
+                                                  profileName: 'ثعبان',
+                                                  profilePicUrl:
+                                                      'https://nostr.download/1aba957814cac9c324c54d94e0ba6606dc50af17f7c08654e9b9f139a9720d6d.jpeg',
+                                                  timestamp: DateTime.now(),
+                                                ),
+                                                Zap(
+                                                  nevent: '1',
+                                                  amount: 56,
+                                                  profileName: 'Pip',
+                                                  profilePicUrl:
+                                                      'https://m.primal.net/IfSZ.jpg',
+                                                  timestamp: DateTime.now(),
+                                                ),
+                                              ],
+                                              reactions: [
+                                                Reaction(
+                                                  emojiName: 'todo',
+                                                  emojiUrl:
+                                                      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femojiguide.org%2Fimages%2Femoji%2Fc%2F1e2fb481tsfvyc.png&f=1&nofb=1&ipt=73d8789f7a055e207ff06bd2278184a2ab6108a8c019f59d0526d05f91d925e7&ipo=images',
+                                                  profilePicUrl:
+                                                      'https://nostr.download/1aba957814cac9c324c54d94e0ba6606dc50af17f7c08654e9b9f139a9720d6d.jpeg',
+                                                  profileName: "ثعبان",
+                                                  timestamp: DateTime.now(),
+                                                ),
+                                                Reaction(
+                                                  emojiName: 'todo',
+                                                  emojiUrl:
+                                                      'https://cdn.satellite.earth/60a5e73bfa6dfd35bd0b144f38f6ed2aaab0606b2bd68b623f419ae0709fa10a.png',
+                                                  profilePicUrl:
+                                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                                  profileName: "Niel Liesmons",
+                                                  timestamp: DateTime.now(),
+                                                ),
+                                              ],
+                                              topReplies: [
+                                                ReplyUserData(
+                                                  profileName: 'Vinney',
+                                                  profilePicUrl:
+                                                      'https://m.primal.net/HdAt.jpg',
+                                                ),
+                                                ReplyUserData(
+                                                  profileName: 'jrm',
+                                                  profilePicUrl:
+                                                      'https://pfp.nostr.build/e9e7963637e04d90ad2c33f21c6f112a188c5b001dd697e108991261487aa258.jpg',
+                                                ),
+                                                ReplyUserData(
+                                                  profileName: 'elsat',
+                                                  profilePicUrl:
+                                                      'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
+                                                ),
+                                              ],
+                                              totalReplies: 10,
                                             ),
                                           ],
                                         ),
@@ -692,6 +923,160 @@ class BaseTab extends StatelessWidget {
                     ),
                   ],
                 ),
+                Section(
+                    title: 'AppActionsModal',
+                    description: 'Modal that slides in for actions',
+                    children: [
+                      AppPanel(
+                        child: AppSmallButton(
+                          inactiveColor: theme.colors.white16,
+                          content: [
+                            AppText.med14('Open Actions Modal',
+                                color: theme.colors.white),
+                          ],
+                          onTap: () {
+                            AppActionsModal.show(
+                              context,
+                              profileName: 'Niel Liesmons',
+                              eventId: '123',
+                              contentType: 'article',
+                              profilePicUrl:
+                                  'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                              message: 'This is a message',
+                              recentAmounts: [1234, 16, 100, 21, 200, 300],
+                              recentReactions: [
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://www.pinclipart.com/picdir/big/357-3571823_free-png-download-ios-10-crying-laughing-emoji.png',
+                                  emojiName: 'laughing',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://clipart.info/images/ccovers/1516250282red-heart-emoji.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'http://clipart.info/images/ccovers/1516250282red-heart-emoji.png',
+                                  emojiName: 'heart',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://cdn.satellite.earth/eb0122af34cf27ba7c8248d72294c32a956209f157aa9d697c7cdd6b054f9ea9.png',
+                                  emojiName: '90',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://cdn.satellite.earth/cbcd50ec769b65c03bc780f0b2d0967f893d10a29f7666d7df8f2d7614d493d4.png',
+                                  emojiName: 'todo',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://cdn.betterttv.net/emote/5eb9919eec17d81685a496b1/3x.webp',
+                                  emojiName: 'todo',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://cdn.betterttv.net/emote/5bc116eddd373363d2c76479/3x.webp',
+                                  emojiName: 'todo',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://nogood.studio/nostr/emotes/NoGood_Yo.gif',
+                                  emojiName: 'todo',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://www.pinclipart.com/picdir/big/357-3571823_free-png-download-ios-10-crying-laughing-emoji.png',
+                                  emojiName: 'laughing',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://clipart.info/images/ccovers/1516250282red-heart-emoji.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'http://clipart.info/images/ccovers/1516250282red-heart-emoji.png',
+                                  emojiName: 'heart',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://cdn.satellite.earth/eb0122af34cf27ba7c8248d72294c32a956209f157aa9d697c7cdd6b054f9ea9.png',
+                                  emojiName: '90',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://cdn.satellite.earth/cbcd50ec769b65c03bc780f0b2d0967f893d10a29f7666d7df8f2d7614d493d4.png',
+                                  emojiName: 'todo',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://cdn.betterttv.net/emote/5eb9919eec17d81685a496b1/3x.webp',
+                                  emojiName: 'todo',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://cdn.betterttv.net/emote/5bc116eddd373363d2c76479/3x.webp',
+                                  emojiName: 'todo',
+                                ),
+                                Reaction(
+                                  profileName: 'Niel Liesmons',
+                                  profilePicUrl:
+                                      'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                                  timestamp: DateTime.now(),
+                                  emojiUrl:
+                                      'https://nogood.studio/nostr/emotes/NoGood_Yo.gif',
+                                  emojiName: 'todo',
+                                ),
+                              ],
+                            );
+                          },
+                        ),
+                      ),
+                    ]),
                 const Section(
                     title: 'AppCodeBlock',
                     description:
@@ -713,6 +1098,40 @@ class BaseTab extends StatelessWidget {
                         language: 'JSON',
                       ),
                     ]),
+                Section(
+                  title: 'AppArticleCard',
+                  description:
+                      'This is a article card widget that can be used to display an article in a card format.',
+                  children: [
+                    AppArticleCard(
+                      title: 'Simple Questions',
+                      profileName: 'Niel Liesmons',
+                      profilePicUrl:
+                          'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                      imageUrl:
+                          'https://cdn.satellite.earth/64b885412eb944828d964c21242f0c7415b1afbf4554eca08f9dd1afba0c7584.png',
+                      onTap: () {
+                        print('tapped');
+                      },
+                    ),
+                  ],
+                ),
+                Section(
+                  title: 'AppZapCard',
+                  description:
+                      'This is a zap card widget that can be used to display a zap in a card format.',
+                  children: [
+                    AppZapCard(
+                      profileName: 'Gzuuus',
+                      profilePicUrl:
+                          'https://pfp.nostr.build/3e72dab77cfcb2339a30a832c891064e38d70ad652cb58306516e34e78e84325.png',
+                      amount: '1234',
+                      message:
+                          'There are several things to understand around security and privacy. The mcps run locally in your hw, and you don\'t have to do any port forwarding or deal with networking stuff, you just need a connection to the internet and nostr takes care of the rest, also the api is pretty limited to the tools available, so it\'s solidly secure. About privacy, we use nostr, so if you use public relays people can see your interactions with dvms, these can be encrypted of course. But you can also use a private relay with auth or whatever and that would also hide your activity for the network. The cool thing is that it can be both private and public, where public also brings all the goodies that dvms are exploring with job chaining and so on. To contribute there is a signal group and the repo I created, and probably move to an organisation',
+                      onTap: () {},
+                    ),
+                  ],
+                ),
               ],
             ),
           );
