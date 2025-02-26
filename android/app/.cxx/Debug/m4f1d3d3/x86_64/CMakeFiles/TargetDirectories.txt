@@ -1,0 +1,2 @@
+/Users/nielliesmons/Nextcloud/Documents/Projects/Buffalo/Nostr/Zapchat/zaplab_demo_app/android/app/.cxx/Debug/m4f1d3d3/x86_64/CMakeFiles/edit_cache.dir
+/Users/nielliesmons/Nextcloud/Documents/Projects/Buffalo/Nostr/Zapchat/zaplab_demo_app/android/app/.cxx/Debug/m4f1d3d3/x86_64/CMakeFiles/rebuild_cache.dir

@@ -46,6 +46,7 @@ class HomePage extends StatelessWidget {
                   ),
                   const AppGap.s16(),
                   AppTabView(
+                    controller: AppTabController(length: 20),
                     tabs: [
                       const BaseTab().tabData(context),
                       const AppsTab().tabData(context),

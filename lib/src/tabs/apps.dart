@@ -50,15 +50,18 @@ class AppsTab extends StatelessWidget {
                           nevent: '1',
                           zaps: [
                             Zap(
-                              nevent: '1',
+                              npub: 'npub1',
+                              nevent: 'nevent1',
                               amount: 10000,
                               profileName: 'elsat',
                               profilePicUrl:
                                   'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
                               timestamp: DateTime.now(),
+                              isOutgoing: true,
                             ),
                             Zap(
-                              nevent: '1',
+                              npub: 'npub1',
+                              nevent: 'nevent1',
                               amount: 560,
                               profileName: 'franzap',
                               profilePicUrl:
@@ -66,7 +69,8 @@ class AppsTab extends StatelessWidget {
                               timestamp: DateTime.now(),
                             ),
                             Zap(
-                              nevent: '1',
+                              npub: 'npub1',
+                              nevent: 'nevent1',
                               amount: 123,
                               profileName: 'Niel Liesmons',
                               profilePicUrl:
@@ -74,24 +78,19 @@ class AppsTab extends StatelessWidget {
                               timestamp: DateTime.now(),
                             ),
                             Zap(
-                              nevent: '1',
+                              npub: 'npub1',
+                              nevent: 'nevent1',
                               amount: 66,
                               profileName: 'calle',
                               profilePicUrl:
                                   'https://avatars.githubusercontent.com/u/93376500',
                               timestamp: DateTime.now(),
                             ),
-                            Zap(
-                              nevent: '1',
-                              amount: 50,
-                              profileName: 'Pip',
-                              profilePicUrl:
-                                  'https://primal.b-cdn.net/media-cache?s=o&a=1&u=https%3A%2F%2Fm.primal.net%2FIfSZ.jpg',
-                              timestamp: DateTime.now(),
-                            ),
                           ],
                           reactions: [
                             Reaction(
+                              npub: 'npub1',
+                              nevent: 'nevent1',
                               emojiName: 'todo',
                               emojiUrl:
                                   'https://cdn.betterttv.net/emote/55b6f480e66682f576dd94f5/3x.webp',
@@ -99,8 +98,11 @@ class AppsTab extends StatelessWidget {
                                   'https://primal.b-cdn.net/media-cache?s=o&a=1&u=https%3A%2F%2Fm.primal.net%2FIfSZ.jpg',
                               profileName: "Pip",
                               timestamp: DateTime.now(),
+                              isOutgoing: true,
                             ),
                             Reaction(
+                              npub: 'npub1',
+                              nevent: 'nevent1',
                               emojiName: 'todo',
                               emojiUrl:
                                   'https://cdn.satellite.earth/60a5e73bfa6dfd35bd0b144f38f6ed2aaab0606b2bd68b623f419ae0709fa10a.png',
@@ -112,6 +114,7 @@ class AppsTab extends StatelessWidget {
                           ],
                         ),
                         AppTabView(
+                          controller: AppTabController(length: 3),
                           tabs: [
                             TabData(
                               label: 'Replies',
@@ -125,6 +128,7 @@ class AppsTab extends StatelessWidget {
                               content: Column(
                                 children: [
                                   AppFeedPost(
+                                    nevent: '1',
                                     content:
                                         'Yeah, this is why I\'m not using Nostr so much on mobile. The browser experience is king, for now.',
                                     profileName: 'James Lewis',
@@ -136,7 +140,8 @@ class AppsTab extends StatelessWidget {
                                       await Future.delayed(
                                           const Duration(seconds: 1));
                                       return NostrEvent(
-                                        nevent: '1',
+                                        npub: 'npub1',
+                                        nevent: 'nevent1',
                                         contentType: 'article',
                                         title: 'Simple Questions',
                                         imageUrl:
@@ -173,9 +178,13 @@ class AppsTab extends StatelessWidget {
                                     onLinkTap: (url) {
                                       print(url);
                                     },
+                                    onReply: (nevent) {
+                                      print(nevent);
+                                    },
                                     zaps: [
                                       Zap(
-                                        nevent: '1',
+                                        npub: 'npub1',
+                                        nevent: 'nevent1',
                                         amount: 100,
                                         profileName: 'ثعبان',
                                         profilePicUrl:
@@ -183,7 +192,8 @@ class AppsTab extends StatelessWidget {
                                         timestamp: DateTime.now(),
                                       ),
                                       Zap(
-                                        nevent: '1',
+                                        npub: 'npub1',
+                                        nevent: 'nevent1',
                                         amount: 56,
                                         profileName: 'Pip',
                                         profilePicUrl:
@@ -193,6 +203,8 @@ class AppsTab extends StatelessWidget {
                                     ],
                                     reactions: [
                                       Reaction(
+                                        npub: 'npub1',
+                                        nevent: 'nevent1',
                                         emojiName: 'todo',
                                         emojiUrl:
                                             'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femojiguide.org%2Fimages%2Femoji%2Fc%2F1e2fb481tsfvyc.png&f=1&nofb=1&ipt=73d8789f7a055e207ff06bd2278184a2ab6108a8c019f59d0526d05f91d925e7&ipo=images',
@@ -202,6 +214,8 @@ class AppsTab extends StatelessWidget {
                                         timestamp: DateTime.now(),
                                       ),
                                       Reaction(
+                                        npub: 'npub1',
+                                        nevent: 'nevent1',
                                         emojiName: 'todo',
                                         emojiUrl:
                                             'https://cdn.satellite.earth/60a5e73bfa6dfd35bd0b144f38f6ed2aaab0606b2bd68b623f419ae0709fa10a.png',

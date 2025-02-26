@@ -18,7 +18,8 @@ class AsciidocDemoTab extends StatelessWidget {
                 // Simulate network delay
                 await Future.delayed(const Duration(seconds: 1));
                 return NostrEvent(
-                  nevent: '1',
+                  npub: 'npub1',
+                  nevent: 'nevent1',
                   contentType: 'article',
                   title: 'Simple Questions',
                   imageUrl:

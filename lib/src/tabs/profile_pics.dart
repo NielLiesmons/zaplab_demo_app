@@ -506,7 +506,7 @@ class ProfilePicsTab extends StatelessWidget {
                             onTap: () {},
                             communities: [
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'npub1',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
@@ -517,12 +517,12 @@ class ProfilePicsTab extends StatelessWidget {
                             onTap: () {},
                             communities: [
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'ijkl'),
@@ -533,27 +533,27 @@ class ProfilePicsTab extends StatelessWidget {
                             onTap: () {},
                             communities: [
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
@@ -564,52 +564,52 @@ class ProfilePicsTab extends StatelessWidget {
                             onTap: () {},
                             communities: [
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
                               Community(
-                                  ncommunity: 'ncommunity1blablabla',
+                                  npub: 'ncommunity1blablabla',
                                   profilePicUrl:
                                       'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
                                   communityName: 'fghj'),
