@@ -336,6 +336,20 @@ class BaseTab extends StatelessWidget {
                         language: 'JSON',
                       ),
                     ]),
+                Section(
+                  title: 'AppCurrentProfileCard',
+                  description:
+                      'This is a card widget that displays the current profile of the user.',
+                  children: [
+                    AppCurrentProfileCard(
+                      npub:
+                          'npub149p5act9a5qm9p47elp8w8h3wpwn2d7s2xecw2ygnrxqp4wgsklq9g722q',
+                      profileName: 'Zaplab',
+                      profilePicUrl:
+                          'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
+                    ),
+                  ],
+                ),
               ],
             ),
           );

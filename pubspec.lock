@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.12.0"
+  bech32:
+    dependency: transitive
+    description:
+      name: bech32
+      sha256: "156cbace936f7720c79a79d16a03efad343b1ef17106716e04b8b8e39f99f7f7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -73,6 +81,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.19.1"
+  convert:
+    dependency: transitive
+    description:
+      name: convert
+      sha256: b30acd5944035672bc15c6b7a8b47d773e41e2f17de064350988c5d02adb1c68
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.2"
   crypto:
     dependency: transitive
     description:
@@ -520,9 +536,11 @@ packages:
   zaplab_design:
     dependency: "direct main"
     description:
-      path: "../zaplab_design"
-      relative: true
-    source: path
+      path: "."
+      ref: main
+      resolved-ref: "4f72fe147924ba841d0936e6b2a726540a66f6fc"
+      url: "https://github.com/NielLiesmons/zaplab_design.git"
+    source: git
     version: "0.0.1"
 sdks:
   dart: ">=3.7.0 <4.0.0"
