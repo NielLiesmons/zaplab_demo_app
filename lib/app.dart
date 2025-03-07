@@ -18,18 +18,16 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
-      child: AppResponsiveTheme(
-        child: AppBase(
-          title: 'Zaplab Demo',
-          routerConfig: _router,
-          appLogo: Image.asset(
-            'assets/images/logo.png',
-            fit: BoxFit.contain,
-          ),
-          darkAppLogo: Image.asset(
-            'assets/images/logo_dark.png',
-            fit: BoxFit.contain,
-          ),
+      child: AppBase(
+        title: 'Zaplab Demo',
+        routerConfig: _router,
+        appLogo: Image.asset(
+          'assets/images/logo.png',
+          fit: BoxFit.contain,
+        ),
+        darkAppLogo: Image.asset(
+          'assets/images/logo_dark.png',
+          fit: BoxFit.contain,
         ),
       ),
     );

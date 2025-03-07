@@ -350,6 +350,16 @@ class BaseTab extends StatelessWidget {
                     ),
                   ],
                 ),
+                Section(
+                  title: 'AppSlotMachine',
+                  description:
+                      'This is a slot machine widget that can be used for private key generation. It makes the randomness aspect obviuous. It can be set to emoji, hex or words mode.',
+                  children: [
+                    AppPanel(
+                      child: AppSlotMachine(),
+                    ),
+                  ],
+                ),
               ],
             ),
           );

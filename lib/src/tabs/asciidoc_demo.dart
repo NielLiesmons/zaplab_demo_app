@@ -75,13 +75,18 @@ This is a demo of the AsciiDoc parser and renderer. This lead paragraph is rende
 It supports basic styling: *bold*, _italic_ or a combination of *_both_*. 
 It can [.underline]#underline# text and [.line-through]#strike through# text.
 
+It renders www.links.com as a clickable link.
+
+it supports 'kind' text, particurly useful for Nostr proposals. 
+
 It displays breaks with a horizontal line.
 
 ---
 It knows how to handle Nostr-native events and profiles.
 And, of course, it can also handle all the other common asciidoc elements.
 
-www.zaplab.com
+
+
 
 = Nostr Events
 == Profiles
@@ -174,36 +179,5 @@ Swiping left lets you reply on this paragraph. If needed, you can of course adju
 
 == Other actions
 Swiping right opens a modal with other actions you can take on this paragraph. Similar to the modal(s) that show up when swiping right on replies, messages, posts, etc...
-
-= Key-munnities
-
-== The Key Pair
-
-What a Community as a Key pair has by default:
-
-. A unique ID 
-. A name 
-. A description 
-. An ability to sign stuff
-
-== The Community
-What the Community needs to publish:
-
-. An event kind that says it's a community (with or without the stuff below directly in it) 
-. Main relay + back-up relays 
-. Blossom server(s) 
-. Price (or other conditions) list (in a way that mirrors the regular relay spec) 
-. Mute list . Guidelines 
-. (Optional) Recommended Apps for this community 
-. (Optional) A publication (article, video, post, story, ..) that serevs as a Welcome/Introduction to the Community
-
-== The Publishers
-What the Community enjoyers needs to publish: 
-
-. A chat message with the Community's npub in the h-tag 
-. Any other Nostr publication 
-. A 32222 (Targeted publication) event that lists the npubs of the targeted Communities
-
-If the event is found on the main relay = The event is accepted
 ''';
 }
