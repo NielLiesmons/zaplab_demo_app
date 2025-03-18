@@ -133,6 +133,25 @@ class ButtonsTab extends StatelessWidget {
                       context,
                       profileName: 'Zaplab',
                       contentType: 'Repo',
+                      onSearchProfiles: (query) async {
+                        return [
+                          Profile(
+                            npub: 'npub1hjghklk',
+                            profileName: 'Zaplab',
+                            profilePicUrl:
+                                'https://cdn.satellite.earth/da67840aae6720f5e5fb9e4c8ce25a85f6d8cbf22f4a04fd44babd58a9badfc6.png',
+                          ),
+                        ];
+                      },
+                      onSearchEmojis: (query) async {
+                        return [
+                          Emoji(
+                            emojiUrl:
+                                'https://cdn.satellite.earth/da67840aae6720f5e5fb9e4c8ce25a85f6d8cbf22f4a04fd44babd58a9badfc6.png',
+                            emojiName: '👍',
+                          ),
+                        ];
+                      },
                       profileImageUrl:
                           'https://cdn.satellite.earth/da67840aae6720f5e5fb9e4c8ce25a85f6d8cbf22f4a04fd44babd58a9badfc6.png',
                       otherZaps: [
@@ -199,13 +218,70 @@ class ButtonsTab extends StatelessWidget {
                       ]),
                       inputField: AppInputField(
                         placeholder: [
-                          AppText.reg14(
-                            'Placeholder Text',
+                          AppText.reg16(
+                            'Type a message...',
                             color: theme.colors.white33,
                           ),
                         ],
                         onChanged: (value) {
                           // Handle text changes
+                        },
+                        onSearchProfiles: (query) async {
+                          return [
+                            Profile(
+                              npub: 'npub1hjghklk',
+                              profileName: 'Franzap',
+                              profilePicUrl:
+                                  'https://primal.b-cdn.net/media-cache?s=m&a=1&u=https%3A%2F%2Fnostr.build%2Fi%2Fnostr.build_1732d9a6cd9614c6c4ac3b8f0ee4a8242e9da448e2aacb82e7681d9d0bc36568.jpg',
+                            ),
+                            Profile(
+                              npub: 'npub1hjghkjhfabez',
+                              profileName: 'Pip',
+                              profilePicUrl: 'https://m.primal.net/IfSZ.jpg',
+                            ),
+                            Profile(
+                              npub: 'npub1hjjkzerhgnotekpo',
+                              profileName: 'Verbricha',
+                              profilePicUrl:
+                                  'https://primal.b-cdn.net/media-cache?s=m&a=1&u=https%3A%2F%2Fnostr.download%2F1aba957814cac9c324c54d94e0ba6606dc50af17f7c08654e9b9f139a9720d6d.jpeg',
+                            ),
+                            Profile(
+                              npub: 'npub1hoshbjdnplrplouy',
+                              profileName: 'Zaplab',
+                              profilePicUrl:
+                                  'https://cdn.satellite.earth/da67840aae6720f5e5fb9e4c8ce25a85f6d8cbf22f4a04fd44babd58a9badfc6.png',
+                            ),
+                            Profile(
+                              npub: 'npub1hjghkyrtflnlvdsjhlk',
+                              profileName: 'Zaplab',
+                              profilePicUrl:
+                                  'https://cdn.satellite.earth/da67840aae6720f5e5fb9e4c8ce25a85f6d8cbf22f4a04fd44babd58a9badfc6.png',
+                            ),
+                          ];
+                        },
+                        onSearchEmojis: (query) async {
+                          return [
+                            Emoji(
+                              emojiUrl:
+                                  'https://cdn.satellite.earth/60a5e73bfa6dfd35bd0b144f38f6ed2aaab0606b2bd68b623f419ae0709fa10a.png',
+                              emojiName: '110%',
+                            ),
+                            Emoji(
+                              emojiUrl:
+                                  'https://cdn.satellite.earth/cbcd50ec769b65c03bc780f0b2d0967f893d10a29f7666d7df8f2d7614d493d4.png',
+                              emojiName: 'nostr',
+                            ),
+                            Emoji(
+                              emojiUrl:
+                                  'https://image.nostr.build/cf022820e693289374dbd3fe4f8cf955ba88d6174b491b16af24d51d8e0c034e.gif',
+                              emojiName: 'eyes',
+                            ),
+                            Emoji(
+                              emojiUrl:
+                                  'https://image.nostr.build/dac316ba92036e63b893e309c2414cdd0e1bcb18aef8e4e657a588a1a2ff8e4a.gif',
+                              emojiName: 'mind-blown',
+                            ),
+                          ];
                         },
                       ),
                     );

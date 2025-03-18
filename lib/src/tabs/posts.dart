@@ -75,7 +75,6 @@ class PostsTab extends StatelessWidget {
                     profilePicUrl:
                         'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
                     timestamp: DateTime.now(),
-                    isOutgoing: true,
                   ),
                   Zap(
                     npub: 'npub1',
@@ -220,6 +219,121 @@ class PostsTab extends StatelessWidget {
                         'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
                     profileName: "Niel Liesmons",
                     timestamp: DateTime.now(),
+                  ),
+                ],
+                topReplies: [
+                  ReplyUserData(
+                    profileName: 'Zaplab',
+                    profilePicUrl:
+                        'https://cdn.satellite.earth/da67840aae6720f5e5fb9e4c8ce25a85f6d8cbf22f4a04fd44babd58a9badfc6.png',
+                  ),
+                  ReplyUserData(
+                    profileName: 'jrm',
+                    profilePicUrl:
+                        'https://pfp.nostr.build/e9e7963637e04d90ad2c33f21c6f112a188c5b001dd697e108991261487aa258.jpg',
+                  ),
+                  ReplyUserData(
+                    profileName: 'elsat',
+                    profilePicUrl:
+                        'https://image.nostr.build/ba781633731cd33bd20f58bbca208ae87db3f87c8f2256e23e4a8df543617c6c.png',
+                  ),
+                ],
+                totalReplies: 10,
+              ),
+              AppFeedPost(
+                nevent: '1',
+                content:
+                    ''' Check out these gardening moments! https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fgardening-season-little-baby-watches-as-his-mother-waters-flowers-watering-can-vertical-family-concept-246956758.jpg
+                    https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F28%2F55%2F58%2F285558f2c9d2865c7f46f197228a42f4.jpg
+                    https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.sheknows.com%2Fwp-content%2Fuploads%2F2018%2F08%2Fmom-toddler-gardening_bp3w3w.jpeg
+                    Growing together 🌱''',
+                profileName: 'Garden Enthusiast',
+                profilePicUrl:
+                    'https://img.freepik.com/premium-photo/girl-happy-portrait-user-profile-by-ai_1119669-10.jpg',
+                timestamp: DateTime.now(),
+                onResolveEvent: (identifier) async {
+                  // Simulate network delay
+                  await Future.delayed(const Duration(seconds: 1));
+                  return NostrEvent(
+                    npub: 'npub1',
+                    nevent: 'nevent1',
+                    contentType: 'article',
+                    title: 'Simple Questions',
+                    imageUrl:
+                        'https://cdn.satellite.earth/64b885412eb944828d964c21242f0c7415b1afbf4554eca08f9dd1afba0c7584.png',
+                    profileName: 'Niel Liesmons',
+                    profilePicUrl:
+                        'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                    timestamp: DateTime.now(),
+                    onTap: () {
+                      print('tapped');
+                    },
+                  );
+                },
+                onResolveProfile: (identifier) async {
+                  await Future.delayed(const Duration(seconds: 1));
+                  return Profile(
+                    npub: 'npub1337',
+                    profileName: 'Pip',
+                    profilePicUrl: 'https://m.primal.net/IfSZ.jpg',
+                  );
+                },
+                onResolveEmoji: (identifier) async {
+                  await Future.delayed(const Duration(seconds: 1));
+                  return 'https://cdn.satellite.earth/eb0122af34cf27ba7c8248d72294c32a956209f157aa9d697c7cdd6b054f9ea9.png';
+                },
+                onResolveHashtag: (identifier) async {
+                  await Future.delayed(const Duration(seconds: 1));
+                  return () {};
+                },
+                onLinkTap: (url) {
+                  print(url);
+                },
+                onReply: (nevent) {
+                  print(nevent);
+                },
+                zaps: [
+                  Zap(
+                    npub: 'npub1',
+                    nevent: 'nevent1',
+                    amount: 110,
+                    profileName: 'ثعبان',
+                    profilePicUrl:
+                        'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                    timestamp: DateTime.now(),
+                    isOutgoing: true,
+                  ),
+                  Zap(
+                    npub: 'npub1',
+                    nevent: 'nevent1',
+                    amount: 56,
+                    profileName: 'Pip',
+                    profilePicUrl: 'https://m.primal.net/IfSZ.jpg',
+                    timestamp: DateTime.now(),
+                  ),
+                ],
+                reactions: [
+                  Reaction(
+                    npub: 'npub1',
+                    nevent: 'nevent1',
+                    emojiName: 'todo',
+                    emojiUrl: 'https://m.primal.net/NSkw.gif',
+                    profilePicUrl:
+                        'https://cdn.satellite.earth/da67840aae6720f5e5fb9e4c8ce25a85f6d8cbf22f4a04fd44babd58a9badfc6.png',
+                    profileName: "ثعبان",
+                    timestamp: DateTime.now(),
+                  ),
+                  Reaction(
+                    npub: 'npub1',
+                    nevent: 'nevent1',
+                    emojiName: 'todo',
+                    emojiUrl:
+                        'https://image.nostr.build/2c6765e290e07e19caf5b5d8c697d67497e0a4bcbe267aadebdc1c88261038a9.gif',
+                    profilePicUrl:
+                        'https://cdn.satellite.earth/946822b1ea72fd3710806c07420d6f7e7d4a7646b2002e6cc969bcf1feaa1009.png',
+                    profileName: "Niel Liesmons",
+                    timestamp: DateTime.now(),
+                    isOutgoing: true,
                   ),
                 ],
                 topReplies: [

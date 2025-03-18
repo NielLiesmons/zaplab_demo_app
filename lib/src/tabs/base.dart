@@ -360,6 +360,22 @@ class BaseTab extends StatelessWidget {
                     ),
                   ],
                 ),
+                Section(
+                  title: 'AppImageStack',
+                  description:
+                      'This is a widget that displays a stack of images.',
+                  children: [
+                    AppImageStack(
+                      imageUrls: [
+                        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fgardening-season-little-baby-watches-as-his-mother-waters-flowers-watering-can-vertical-family-concept-246956758.jpg&f=1&nofb=1&ipt=407cd8f63d17ba8c39725309c6f38aa18221873ff4c292eba67a3d8688076afb&ipo=images',
+                        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F28%2F55%2F58%2F285558f2c9d2865c7f46f197228a42f4.jpg&f=1&nofb=1&ipt=685b7665d1e3177a3264072e7767f8d5e765d26c038f9e089f6d2a674dbf10c9&ipo=images',
+                        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.sheknows.com%2Fwp-content%2Fuploads%2F2018%2F08%2Fmom-toddler-gardening_bp3w3w.jpeg&f=1&nofb=1&ipt=0212c70b96e5b59a0ba122e5bbd1e3f289ae322bb07609fe0829461ff66ce390&ipo=images',
+                        'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
+                        'https://cdn.satellite.earth/c1049a551ab657593f334ff30afe7b8795affc52fe8e96dc08be901c0180d87a.png',
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           );
